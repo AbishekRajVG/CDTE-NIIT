@@ -5,17 +5,20 @@ public class Manager {
 	public static void main(String args[]) {
 		System.out.println("Enter no. of students you want to get details for = ");
 		St=ch.nextInt();
-		Stu s[]= new Stu[3];
+		Stu s[]= new Stu[10];
+		
 		 for(int i=0;i<St;i++) {
 			System.out.println("Enter the details of student "+ (i+1));
+			s[i] = new Stu();
 			s[i].get_details();
 			s[i].get_addr();}
 			
 		 System.out.println("Enter no. of Staff members you want to get details for = ");
 		 S=ch.nextInt();
-		 Staff s1[]= new Staff[3];
+		 Staff s1[]= new Staff[10];
 		  for(int i=0;i<S;i++) {
 			  System.out.println("Enter Details of Staff "+ (i+1));
+			s1[i]= new Staff();
 			s1[i].get_details();
 			s1[i].get_addr();}
 		  
@@ -24,6 +27,7 @@ public class Manager {
 		  School s2[]= new School[3];
 		   for(int i=0;i<Sh;i++) {
 			   System.out.println("Enter Details of School "+ (i+1));
+			   s2[i]= new School();
 			   s2[i].get_details();
 			   s2[i].get_addr(); }
 			  
