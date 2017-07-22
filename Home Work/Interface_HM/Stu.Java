@@ -1,6 +1,6 @@
 
 public class Stu implements info {String Name,ID,Addr;int Age;
-	public void get_details(){
+	public void get_details(){						//overriding get_details from interface info 
 		System.out.println("Enter Student's Name : ");
 		Name = S.next();
 		System.out.println("Enter Studen's Age : ");
@@ -9,9 +9,10 @@ public class Stu implements info {String Name,ID,Addr;int Age;
 		ID = S.next();
 	}
 
-	public void get_addr() {
+	public void get_addr() {						//overriding get_addr from interface info 
 		System.out.println("Enter Address : ");
 		Addr = S.next(); 
 	}
 
-}
+}//end of Stu class
+
