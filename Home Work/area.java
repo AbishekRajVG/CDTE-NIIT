@@ -47,7 +47,7 @@ public class Area {
 			obj.si2=obj.S.nextFloat();
 			System.out.println("Enter third side = ");
 			obj.si3=obj.S.nextFloat();
-			 System.out.println("Area of triangle = " + obj.ar(obj.si1,obj.si2,obj.si3));}
+			 System.out.println("Area of triangle = " + obj.ar(obj.si1,obj.si2,obj.si3));}//
 	 
  
 }
