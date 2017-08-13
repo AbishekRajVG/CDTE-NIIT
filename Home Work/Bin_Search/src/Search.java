@@ -17,8 +17,8 @@ public class Search {
 		int pt = 0;
 		l = 0;
 		u = n - 1;
-		while (l < u) {
-			m = l + u / 2;
+		while (l <= u) {
+			m = (l + u) / 2;
 
 			if (temp[m] == x) {
 				pt++;
