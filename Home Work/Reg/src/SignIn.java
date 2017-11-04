@@ -13,8 +13,10 @@ public class SignIn extends SignUp{
 	}
 	void validate() {
 		
-		if(un.equals(Uname)&&up.equals(pass));
-		this.display();	
+		if(un.equals(Uname)&&up.equals(pass))
+		 this.display();	
+		else 
+		 system.out.println("Wrong credentials...")
 		
 	}
 }
