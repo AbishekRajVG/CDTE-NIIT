@@ -1,0 +1,4 @@
+eacypc\backend\dto\Categories.class
+eacypc\backend\daoimpl\CategoriesDAOimpl.class
+eacypc\backend\App.class
+eacypc\backend\dao\CategoriesDAO.class

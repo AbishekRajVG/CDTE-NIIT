@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import eacypc.backend.dao.CategoriesDAO;
+
 
 
 
@@ -12,6 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class PageController {
+	
+	@Autowired
+	private CategoriesDAO catsDAO;
 
 
 	@RequestMapping(value = { "/", "/home", "/index" })
@@ -19,6 +24,8 @@ public class PageController {
 		ModelAndView mav = new ModelAndView("homepage");
 		mav.addObject("title", "home");
 		mav.addObject("onHome", true);
+		//passing 
+		mav.addObject("categories",catsDAO.list());
 	
 		return mav;
 	

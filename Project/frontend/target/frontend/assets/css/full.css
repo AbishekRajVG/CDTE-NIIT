@@ -1,0 +1,31 @@
+html {
+	height: 100%;
+}
+
+body {
+	padding-top: 54px;
+	height: 100%;
+}
+
+@media ( min-width : 992px) {
+	body {
+		padding-top: 56px;
+	}
+}
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+.content {
+	padding-bottom: 30px;
+}
+
+.panel-footer {
+	position: absolute;
+	bottom: 15px;
+	hieght: 60px; 
+	
+	
+}

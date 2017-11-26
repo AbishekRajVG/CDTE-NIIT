@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import eacypc.backend.dao.CategoriesDAO;
 import eacypc.backend.dto.Categories;
 
-@Repository("cats")
+@Repository("catsDAO")
 public class CategoriesDAOimpl implements CategoriesDAO {
 
 	private static List<Categories> cats = new ArrayList<Categories>();
