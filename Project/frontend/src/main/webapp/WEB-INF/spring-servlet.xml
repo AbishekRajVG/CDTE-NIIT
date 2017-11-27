@@ -16,12 +16,13 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
         ">
 
-	<context:annotation-config />
-	<context:component-scan base-package="easypc.frontend.controller" />
-	<context:component-scan base-package="easypc.backend.daoimpl" />
-
-		
 	
+	
+	
+	
+	<context:component-scan base-package="easypc.frontend.controller"/>
+	<context:component-scan base-package="easypc.backend" />
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />

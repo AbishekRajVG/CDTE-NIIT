@@ -8,20 +8,22 @@ import org.springframework.stereotype.Repository;
 import eacypc.backend.dao.CategoriesDAO;
 import eacypc.backend.dto.Categories;
 
-@Repository("catsDAO")
-public class CategoriesDAOimpl implements CategoriesDAO {
+@Repository
+public class CategoriesDAOImpl implements CategoriesDAO {
 
-	private static List<Categories> cats = new ArrayList<Categories>();
+	
+	private static List<Categories> cats = new ArrayList<>();
 
 	static {
 		// first category
+		
 		Categories ctg = new Categories();
 		ctg.setId(1);
 		ctg.setName("Graphics Cards");
 		ctg.setDesc("Bitchin'");
 		ctg.setImageURL("");
 
-		cats.add(ctg);
+		cats.add(ctg);	
 
 		// second
 		ctg = new Categories();
@@ -43,8 +45,9 @@ public class CategoriesDAOimpl implements CategoriesDAO {
 
 	}
 
+	@Override
 	public List<Categories> list() {
-		// TODO Auto-generated method stub
+		
 		return cats;
 	}
 
