@@ -24,7 +24,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,11 +35,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+
 <title>noobPage - ${title}</title>
 
-<script>
-	window.menu = '${title}';
-</script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
@@ -70,14 +67,20 @@
 			</c:if>
 
 			<c:if test="${onAbout==true}">
-				<!-- Loads only when user clicks Home -->
+				<!-- Loads only when user clicks About -->
 				<%@include file="about.jsp"%>
 			</c:if>
 
 			<c:if test="${onContact==true}">
-				<!-- Loads only when user clicks Home -->
+				<!-- Loads only when user clicks Contact -->
 				<%@include file="contact.jsp"%>
 			</c:if>
+			
+			<c:if test="${onShowAll==true or onCat==true}">
+				<!-- Loads only when user clicks All products or categories -->
+				<%@include file="ListProducts.jsp"%>
+			</c:if>
+			 
 
 		</div>
 
@@ -87,7 +90,7 @@
 
 
 		<!-- Bootstrap core JavaScript -->
-		<script src="${js}/jquery.min.js"></script>
+		<script src="${js}/jquery.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
 
 		<!-- personal JS  -->
