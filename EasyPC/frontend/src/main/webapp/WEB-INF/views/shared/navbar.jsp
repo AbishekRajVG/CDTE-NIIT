@@ -1,7 +1,11 @@
 
+ <style>
+ .bg-maroon{
+ 	background-color: #E9E935  ;
+ }
+ </style>
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
 	<div class="container">
 		<a class="navbar-brand" href="${contextRoot}/home"><img
 			src="${images}/logo.jpg" class="img-rectangle" width="100"

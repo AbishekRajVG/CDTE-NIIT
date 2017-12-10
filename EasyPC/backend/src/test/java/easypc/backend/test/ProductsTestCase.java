@@ -25,9 +25,9 @@ public class ProductsTestCase {
 
 	}
 
-	// @Test
-	// public void TestCRUDProducts() {
-	//
+//	 @Test
+//	 public void TestCRUDProducts() {
+//	
 	// // add operation
 	//
 	// // first
@@ -141,13 +141,13 @@ public class ProductsTestCase {
 	// assertEquals("Something went wrong while inserting product", true,
 	// prodDAO.add(prod));
 	//
-	// // update Operation
-	// prod = prodDAO.get(6);
-	//
-	// prod.setName("Logitech G810 RGB Keyboard");
-	// assertEquals("Something went wrong while updating product", true,
-	// prodDAO.update(prod));
-	//
+//	 // update Operation
+//	 prod = prodDAO.get(6);
+//	
+//	 prod.setName("GIGABYTE Z370 AORUS Gaming 7 ");
+//	 assertEquals("Something went wrong while updating product", true,
+//	 prodDAO.update(prod));
+//	
 	// // delete Operation
 	// assertEquals("Something went wrong while updating product", true,
 	// prodDAO.delete(prod));
@@ -156,7 +156,7 @@ public class ProductsTestCase {
 	// //assertEquals("Something went wrong while fetching products list", 9,
 	// prodDAO.list().size());
 	//
-	// }
+//	 }
 
 //	@Test
 //	public void testListActiveProducts() {

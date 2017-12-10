@@ -17,6 +17,11 @@
 
 					<c:if test="${onShowAll==true}">
 						<h1 class="my-4"></h1>
+
+						<script>
+							window.category_id = '';
+						</script>
+
 						<ol class="breadcrumb">
 							<li><a href="${contextRoot}/home">Home </a></li>
 							<li class="active">--> All Products</li>
@@ -25,6 +30,11 @@
 
 					<c:if test="${onCat==true}">
 						<h1 class="my-4"></h1>
+
+						<script>
+							window.category_id = '${category.id}';
+						</script>
+
 						<ol class="breadcrumb">
 							<li><a href="${contextRoot}/home">Home </a></li>
 							<li class="active">--> Category</li>
@@ -37,26 +47,30 @@
 			</div>
 
 			<div class="row">
-			
-				<div class = "col-xs-12">
-				
-				<table id="productListTable" class = "table table-striped table-bordered">
-				
-					<thead class="thead-inverse">
-					
-						<tr>
-							<th>ID</th>
-							<th>Name</th>
+
+				<div class="col-xs-12 container-fluid">
+
+					<table id="productListTable" class="table table-bordered">
+
+						<thead class="table-danger">
+
+							<tr>
+								<th></th>
+								<th>Name</th>
+								<th>Brand</th>
+								<th>Unit Price</th>
+								<th>Stock</th>
+								<th></th>
+								
+							</tr>
+
+						</thead>
 						
-						</tr>
-					
-					</thead>
-				
 				</table>
-				
+
 				</div>
-			
-			
+
+
 			</div>
 
 		</div>

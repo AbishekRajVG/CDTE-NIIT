@@ -34,10 +34,14 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <title>noobPage - ${title}</title>
 
-
+<script type="text/javascript">
+	window.contextRoot = '${contextRoot}';
+</script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
@@ -45,8 +49,14 @@
 <!-- Sketchy Theme -->
 <link href="${css}/SketchyTheme.css" rel="stylesheet">
 
+<!-- Bootstrap DataTable css -->
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
+
 <!-- Custom styles for this template -->
 <link href="${css}/full.css" rel="stylesheet">
+
+
+
 
 </head>
 
@@ -59,7 +69,7 @@
 
 
 		<div class="content">
-			
+
 			<!-- Page Content -->
 			<c:if test="${onHome==true}">
 				<!-- Loads only when user clicks Home -->
@@ -75,12 +85,12 @@
 				<!-- Loads only when user clicks Contact -->
 				<%@include file="contact.jsp"%>
 			</c:if>
-			
+
 			<c:if test="${onShowAll==true or onCat==true}">
 				<!-- Loads only when user clicks All products or categories -->
 				<%@include file="ListProducts.jsp"%>
 			</c:if>
-			 
+
 
 		</div>
 
@@ -92,13 +102,18 @@
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
-		
+
 		<!-- data table plugin -->
 		<script src="${js}/jquery.dataTables.js"></script>
-		
 
-		<!-- personal JS  -->
-		<script src="${css}/yolo.js"></script>
+		<!-- data table script-->
+		<script src="${js}/dataTables.bootstrap4.js"></script>
+
+
+
+
+		<!-- my logic JS  -->
+		<script src="${js}/mylogic.js"></script>
 
 	</div>
 
