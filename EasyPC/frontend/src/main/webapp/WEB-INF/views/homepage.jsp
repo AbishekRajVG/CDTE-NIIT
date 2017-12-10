@@ -7,6 +7,7 @@
 
 
 
+
 <!-- css -->
 <spring:url var="css" value="/resources/css" />
 
@@ -23,8 +24,6 @@
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
 
-
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -37,6 +36,7 @@
 
 
 <title>noobPage - ${title}</title>
+
 
 
 <!-- Bootstrap core CSS -->
@@ -92,9 +92,13 @@
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
+		
+		<!-- data table plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		
 
 		<!-- personal JS  -->
-		<script src="${js}/mylogic.js"></script>
+		<script src="${css}/yolo.js"></script>
 
 	</div>
 

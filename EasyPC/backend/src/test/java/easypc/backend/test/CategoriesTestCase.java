@@ -69,96 +69,98 @@ public class CategoriesTestCase {
 	//
 	// }
 
-	@Test
-	public void testCRUDCategory() {
-
-		// add operation
-		//first
-		ctg = new Categories();
-		ctg.setName("Graphics Cards");
-		ctg.setDesc("Bitchin'");
-		ctg.setImageurl("");
-
-		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
-
-		// second
-		ctg = new Categories();
-		ctg.setName("CPU");
-		ctg.setDesc("Heart");
-		ctg.setImageurl("");
-
-		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
-
-		// third
-		ctg = new Categories();
-		ctg.setName("MotherBoard");
-		ctg.setDesc("the Mother");
-		ctg.setImageurl("");
-
-		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
-
-		// fourth
-		ctg = new Categories();
-		ctg.setName("Storage");
-		ctg.setDesc("Hard stuff");
-		ctg.setImageurl("");
-
-		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
-
-		// third
-		ctg = new Categories();
-		ctg.setName("Memory");
-		ctg.setDesc("Stick Stuff");
-		ctg.setImageurl("");
-
-		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
-
-		// sixth
-		ctg = new Categories();
-		ctg.setName("Power Supply Units");
-		ctg.setDesc("Power");
-		ctg.setImageurl("");
-
-		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
-
-		// seventh
-		ctg = new Categories();
-		ctg.setName("Cooling Devices");
-		ctg.setDesc("Keeping it cool");
-		ctg.setImageurl("");
-
-		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
-
-		// Eighth
-		ctg = new Categories();
-		ctg.setName("Desktop Cases");
-		ctg.setDesc("looking sexy");
-		ctg.setImageurl("");
-
-		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
-
-		// ninth
-		ctg = new Categories();
-		ctg.setName("Peripherals");
-		ctg.setDesc("Power");
-		ctg.setImageurl("");
-
-		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
-
-		
-		// // update op
-		// ctg = catsDAO.get(2);
-		// ctg.setName("RAM");
-		// assertEquals("Successfully got Category", true, catsDAO.update(ctg));
-		//
-		// //delete op
-		// assertEquals("Successfully deleted Category",true,
-		// catsDAO.delete(ctg));
-
-		// fetching list
-		// assertEquals("Successfully got list of Categories", 2,
-		// ctgDAO.list().size());
-
-	}
+//	@Test
+//	public void testCRUDCategory() {
+//
+//		// add operation
+//		//first
+//		ctg = new Categories();
+//		ctg.setName("Graphics Cards");
+//		ctg.setDesc("Bitchin'");
+//		ctg.setImageurl("");
+//
+//		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
+//
+//		// second
+//		ctg = new Categories();
+//		ctg.setName("CPU");
+//		ctg.setDesc("Heart");
+//		ctg.setImageurl("");
+//
+//		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
+//
+//		// third
+//		ctg = new Categories();
+//		ctg.setName("MotherBoard");
+//		ctg.setDesc("the Mother");
+//		ctg.setImageurl("");
+//
+//		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
+//
+//		// fourth
+//		ctg = new Categories();
+//		ctg.setName("Storage");
+//		ctg.setDesc("Hard stuff");
+//		ctg.setImageurl("");
+//
+//		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
+//
+//		// fifth
+//		ctg = new Categories();
+//		ctg.setName("Memory");
+//		ctg.setDesc("Stick Stuff");
+//		ctg.setImageurl("");
+//
+//		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
+//
+//		// sixth
+//		ctg = new Categories();
+//		ctg.setName("Power Supply Units");
+//		ctg.setDesc("Power");
+//		ctg.setImageurl("");
+//
+//		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
+//
+//		// seventh
+//		ctg = new Categories();
+//		ctg.setName("Cooling Devices");
+//		ctg.setDesc("Keeping it cool");
+//		ctg.setImageurl("");
+//
+//		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
+//
+//		// Eighth
+//		ctg = new Categories();
+//		ctg.setName("Desktop Cases");
+//		ctg.setDesc("looking sexy");
+//		ctg.setImageurl("");
+//
+//		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
+//
+//		// ninth
+//		ctg = new Categories();
+//		ctg.setName("Peripherals");
+//		ctg.setDesc("Power");
+//		ctg.setImageurl("");
+//
+//		assertEquals("Successfully added Category", true, catsDAO.add(ctg));
+//
+//		
+//		// // update op
+//		// ctg = catsDAO.get(2);
+//		// ctg.setName("RAM");
+//		// assertEquals("Successfully got Category", true, catsDAO.update(ctg));
+//		//
+//		// //delete op
+//		// assertEquals("Successfully deleted Category",true,
+//		// catsDAO.delete(ctg));
+//
+//		// fetching list
+//		// assertEquals("Successfully got list of Categories", 2,
+//		// ctgDAO.list().size());
+//
+//	}
+//	
+	
 
 }
