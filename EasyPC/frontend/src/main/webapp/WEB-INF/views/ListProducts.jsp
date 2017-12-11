@@ -1,3 +1,11 @@
+ <style>
+ .bg-niceGreen{
+ 	background-color:	#51BAF2;
+ }
+
+</style>
+
+
 <div class="container">
 
 	<div class="row">
@@ -22,7 +30,7 @@
 							window.category_id = '';
 						</script>
 
-						<ol class="breadcrumb">
+						<ol class="breadcrumb bg-niceGreen">
 							<li><a href="${contextRoot}/home">Home </a></li>
 							<li class="active">--> All Products</li>
 						</ol>

@@ -90,6 +90,11 @@
 				<!-- Loads only when user clicks All products or categories -->
 				<%@include file="ListProducts.jsp"%>
 			</c:if>
+			
+			<c:if test="${onViewProduct==true}">
+				<!-- Loads only when user clicks View Products -->
+				<%@include file="ViewProduct.jsp"%>
+			</c:if>
 
 
 		</div>

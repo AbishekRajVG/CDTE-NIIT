@@ -1,5 +1,5 @@
  <style>
- .bg-maroon{
+ .bg-yellow{
  	background-color: #E9E935 ;
  }
  </style>

@@ -20,7 +20,7 @@
 	
 	
 	
-	<context:component-scan base-package="easypc.frontend.controller"/>
+	<context:component-scan base-package="easypc.frontend"/>
 	<context:component-scan base-package="easypc.backend"/>
 	
 	<bean id="viewResolver"

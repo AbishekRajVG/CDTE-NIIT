@@ -1,9 +1,11 @@
+
 $(function() {
 
 	// code for jquery dataTable
 
 	var $table = $('#productListTable');
 
+	
 	if ($table.length) {
 		// console.log('Ínside the table!');
 
@@ -17,8 +19,14 @@ $(function() {
 
 		$table
 				.DataTable({
-					lengthMenu : [ [ 3, 5, 10, -1 ],
-							[ '3 rows  ', '5 rows  ', '10 rows  ', '  all rows  ' ] ],
+					
+					"oLanguage": {
+					      "sLengthMenu": " _MENU_ rows",
+					    },			
+					
+					
+					lengthMenu : [ [ -1, 3, 5, 10,20 ],
+							[ ' All ','3 ', '5 ', '10 ','20'] ],
 					pageLength : 5,
 
 					ajax : {
@@ -29,13 +37,29 @@ $(function() {
 					columns : [
 							{
 								data: 'code',
+								
 								mRender: function(data, type, row){
-									return '<img src= " ' + window.contextRoot + '/resources/images/'+ data +'.jpg" height="80" width="80"/>' ;
+									return '<a href=" '
+									+ window.contextRoot
+									+ '/show/'
+									+ row.id
+									+ '/product" data-toggle="tooltip" title="View Product"><img src= " ' + window.contextRoot + '/resources/images/'+ data +'.jpg" height="80" width="80"/></a>' ;
 								}
 							},
 
 							{
-								data : 'name'
+								data : 'name',
+								
+								
+								mRender: function(data, type, row){
+									return '<a href=" '
+									+ window.contextRoot
+									+ '/show/'
+									+ row.id
+									+ '/product" data-toggle="tooltip" title="View Product">'+ data +'</a>' ;
+								}
+								
+								
 							},
 							{
 								data : 'brand'
@@ -47,24 +71,40 @@ $(function() {
 								}
 							},
 							{
-								data : 'quantity'
+								data : 'quantity',
+								mRender : function(data, type, row){
+									
+									if(data < 1){
+										return '<span style="color:red">Out of Stock</span>';
+									}
+									
+									return data + 'left';
+								}
+									
 							},
 
 							{
 								data : 'id',
 								bSortable : false,
 								mRender : function(data, type, row) {
-									var str = '<a href=" '
-											+ window.contextRoot
-											+ '/show/'
-											+ data
-											+ '/product" class="btn btn-outline-info"><i class="fa fa-eye"></i></a> &#160;';
-									str += '<a href=" '
-											+ window.contextRoot
-											+ '/buy/'
-											+ data
-											+ '/product" class="btn btn-outline-success"><i class="fa fa-cart-plus"></i></a>';
+									
+									var str='';
+									
+									if(row.quantity > 0)
+										
+										str = '<a href=" '
+												+ window.contextRoot
+												+ '/buy/'
+												+ data
+												+ '/product" class="btn btn-outline-success"><i class="fa fa-cart-plus"></i>Add to Cart</a>';
 
+									else
+										
+
+										str += '<a href="javascript:void(0)" class="btn btn-dark disabled"><i class="fa fa-cart-plus"></i>Add to Cart</a>';
+
+									
+									
 									return str;
 								}
 							}
