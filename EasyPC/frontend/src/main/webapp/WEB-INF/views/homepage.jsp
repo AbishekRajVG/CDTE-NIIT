@@ -62,6 +62,9 @@
 
 <body>
 
+<style>a:hover{color:red;
+			   font-weight: bold;}</style>
+
 	<div class="wrapper">
 
 		<!-- Navigation -->
@@ -94,6 +97,11 @@
 			<c:if test="${onViewProduct==true}">
 				<!-- Loads only when user clicks View Products -->
 				<%@include file="ViewProduct.jsp"%>
+			</c:if>
+			
+			<c:if test="${onManageProducts==true}">
+				<!-- Loads only when user clicks View Products -->
+				<%@include file="ProdManagement.jsp"%>
 			</c:if>
 
 

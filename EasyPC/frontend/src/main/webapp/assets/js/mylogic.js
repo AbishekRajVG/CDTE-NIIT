@@ -25,8 +25,8 @@ $(function() {
 					    },			
 					
 					
-					lengthMenu : [ [ -1, 3, 5, 10,20 ],
-							[ ' All ','3 ', '5 ', '10 ','20'] ],
+					lengthMenu : [ [ 3, 5, 10, -1 ],
+							[ '3 ', '5 ', '10 ', ' ALL '] ],
 					pageLength : 5,
 
 					ajax : {
@@ -56,7 +56,7 @@ $(function() {
 									+ window.contextRoot
 									+ '/show/'
 									+ row.id
-									+ '/product" data-toggle="tooltip" title="View Product">'+ data +'</a>' ;
+									+ '/product" data-toggle="tooltip" title="View Product"><strong>'+ data +'</strong></a>' ;
 								}
 								
 								
@@ -96,12 +96,12 @@ $(function() {
 												+ window.contextRoot
 												+ '/buy/'
 												+ data
-												+ '/product" class="btn btn-outline-success"><i class="fa fa-cart-plus"></i>Add to Cart</a>';
+												+ '/product" class="btn btn-outline-success"><i class="fa fa-cart-plus"></i>&#160; Add to Cart</a>';
 
 									else
 										
 
-										str += '<a href="javascript:void(0)" class="btn btn-dark disabled"><i class="fa fa-cart-plus"></i>Add to Cart</a>';
+										str += '<a href="javascript:void(0)" class="btn btn-dark disabled"><i class="fa fa-cart-plus"></i>&#160; Add to Cart</a>';
 
 									
 									

@@ -1,9 +1,16 @@
 
- <style>
- .bg-yellow{
- 	background-color: #E9E935  ;
- }
- </style>
+<style>
+.bg-yellow {
+	background-color: #E9E935;
+}
+</style>
+
+<style>
+.bg-lightyellow {
+	background-color: #FFFFAA;
+}
+</style>
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
 	<div class="container">
@@ -18,8 +25,13 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 
 			<ul class="nav nav-pills nav-justified">
-				<li><a class="nav-link ${status3}" href="${contextRoot}/show/all/products">All
-						Products</a></li>
+				<li><a class="nav-link ${status3}"
+					href="${contextRoot}/show/all/products">All Products</a></li>
+			</ul>
+
+			<ul class="nav nav-pills nav-justified">
+				<li><a class="nav-link ${status4}"
+					href="${contextRoot}/manage/products">Product Management</a></li>
 			</ul>
 
 			<ul class="nav nav-pills nav-justified ml-auto">
@@ -27,7 +39,8 @@
 				<li><a class="nav-link ${status1}" href="${contextRoot}/about">About</a>
 				</li>
 
-				<li id="contact"><a class="nav-link ${status2}" href="${contextRoot}/contact">Contact</a></li>
+				<li id="contact"><a class="nav-link ${status2}"
+					href="${contextRoot}/contact">Contact</a></li>
 			</ul>
 
 
@@ -36,3 +49,4 @@
 		</div>
 	</div>
 </nav>
+<br>

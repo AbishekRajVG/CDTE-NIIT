@@ -196,7 +196,7 @@ to {
 				<c:when test="${product.quantity < 1}">
 
 					<a href="javascript:void(0)" class="btn btn-dark disabled"><i
-						class="fa fa-cart-plus"></i> Add to Cart &#160; </a>
+						class="fa fa-cart-plus"></i> Add to Cart  </a>
 
 				</c:when>
 
