@@ -107,6 +107,10 @@ public class PageController {
 		//getting prod id
 		Products prod = prodDAO.get(id);
 		
+		Categories ctg = null;
+		ctg = catsDAO.get(id);
+	
+		
 		if(prod==null){throw new ProductNotFoundException();}
 		
 		//updating view count
@@ -116,6 +120,7 @@ public class PageController {
 		mav.addObject("title",prod.getName());
 		mav.addObject("product", prod);
 		mav.addObject("onViewProduct", true);
+		
 		
 		return mav;
 	}
