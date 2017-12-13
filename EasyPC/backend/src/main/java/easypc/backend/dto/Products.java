@@ -6,21 +6,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Products {
 
+	@Override
+	public String toString() {
+		return "Products [id=" + id + ", code=" + code + ", name=" + name + ", brand=" + brand + ", description="
+				+ description + ", unit_price=" + unit_price + ", quantity=" + quantity + ", active=" + active
+				+ ", category_id=" + category_id + ", supplier_id=" + supplier_id + ", purchases=" + purchases
+				+ ", views=" + views + "]";
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String code;
+	@NotBlank(message="Please enter the product's name.")
 	private String name;
+	@NotBlank(message="Please enter the product's brand")
 	private String brand;
 	@JsonIgnore
+	@NotBlank(message="Please add a product description")
 	private String description;
 	private double unit_price;
+	@Min(value=1, message="The product can not be free of cost")
 	private int quantity;
 	@JsonIgnore
 	private boolean active;
@@ -30,6 +47,18 @@ public class Products {
 	private int supplier_id;
 	private int purchases;
 	private int views;
+	
+	
+	@Transient
+	private MultipartFile file;
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
 
 	// default const -- randomly generates unique product id
 	public Products() {

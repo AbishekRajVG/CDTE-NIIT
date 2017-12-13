@@ -26,7 +26,7 @@ CREATE TABLE products (
 	code VARCHAR(20),
 	name VARCHAR(50),
 	brand VARCHAR(50),
-	description VARCHAR(255),
+	description VARCHAR(5000),
 	unit_price DECIMAL(10,2),
 	quantity INT,
 	active BOOLEAN,
@@ -66,4 +66,3 @@ VALUES ('ssd1', 'Samsung 850 EVO 500GB','Samsung', 'Samsung 850 EVO 500GB with R
 INSERT INTO products (code, name, brand, description, unit_price, quantity, active, category_id, supplier_id, purchases, views)
 VALUES ('logig810', 'Logitech G810 RGB Gaming Keyboard','Logitech','Logitech G810 Orion Spectrum RGB Mechanical Gaming Keyboard w/ Ultra-Responsive Romer-G Mechanical Key Switches', 10000, 15, true, 9, 3, 0, 0 );
 
-alter table product rename to products;

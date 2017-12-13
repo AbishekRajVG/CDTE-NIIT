@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class HibernateConfig {
 
 	// h2 configs
-	private static final String DB_url = "jdbc:h2:tcp://localhost/~/easypc";
+	private static final String DB_url = "jdbc:h2:tcp://localhost/~/easy_pc";
 	private static final String DB_driver = "org.h2.Driver";
 	private static final String DB_dialect = "org.hibernate.dialect.H2Dialect";
 	private static final String DB_uname = "sa";

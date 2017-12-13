@@ -43,7 +43,7 @@ $(function() {
 									+ window.contextRoot
 									+ '/show/'
 									+ row.id
-									+ '/product" data-toggle="tooltip" title="View Product"><img src= " ' + window.contextRoot + '/resources/images/'+ data +'.jpg" height="80" width="80"/></a>' ;
+									+ '/product" data-toggle="tooltip" title="View Product"><img src= " ' + window.contextRoot + '/resources/images/'+ data +'.jpg" height="100" width="100"/></a>' ;
 								}
 							},
 
@@ -78,7 +78,7 @@ $(function() {
 										return '<span style="color:red">Out of Stock</span>';
 									}
 									
-									return data + 'left';
+									return data + ' left';
 								}
 									
 							},
@@ -112,5 +112,19 @@ $(function() {
 					]
 				});
 	}
+	
+	//dismissing alert after specific time
+		var $alert = $('.alert');
+		
+		if($alert.length){
+			
+			setTimeout(function(){
+				$alert.fadeOut('slow');				
+			},3000)
+			
+		}
+		
+	
+	
 
 });
