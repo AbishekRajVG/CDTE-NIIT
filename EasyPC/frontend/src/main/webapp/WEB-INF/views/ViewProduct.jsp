@@ -118,7 +118,7 @@ to {
 				<li><a href="${contextRoot}/home"> Home </a> --></li>
 				<li><a href="${contextRoot}/show/all/products"> All
 						Products </a> --></li>
-				<li><a href="${contextRoot}/show/category/${product.category_id}/products">${product.category_id}</a> --></li>
+				<li><a href="${contextRoot}/show/category/${product.category_id}/products">back to Category</a> --></li>
 				<li class="active">${product.name}</li>
 
 			</ol>

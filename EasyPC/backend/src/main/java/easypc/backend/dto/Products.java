@@ -39,7 +39,6 @@ public class Products {
 	private double unit_price;
 	@Min(value=1, message="The product can not be free of cost")
 	private int quantity;
-	@JsonIgnore
 	private boolean active;
 	@JsonIgnore
 	private int category_id;

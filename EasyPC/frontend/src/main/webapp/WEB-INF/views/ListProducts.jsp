@@ -28,6 +28,7 @@
 
 						<script>
 							window.category_id = '';
+							
 						</script>
 
 						<ol class="breadcrumb bg-niceGreen">
@@ -41,6 +42,7 @@
 
 						<script>
 							window.category_id = '${category.id}';
+							window.categoryName = '${category.name}'
 						</script>
 
 						<ol class="breadcrumb">

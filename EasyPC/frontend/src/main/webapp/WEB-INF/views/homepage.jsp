@@ -28,6 +28,14 @@
 
 <head>
 
+<style>
+.bg-lightGreen {
+	background-color: #7EF7A8;
+}
+.bg-lightRed {
+	background-color: #FF7575;
+}
+</style>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,7 +43,8 @@
 <meta name="author" content="">
 
 <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <title>noobPage - ${title}</title>
 
@@ -57,13 +66,16 @@
 
 
 
-
 </head>
 
 <body>
 
-<style>a:hover{color:red;
-			   font-weight: bold;}</style>
+	<style>
+a:hover {
+	color: red;
+	font-weight: bold;
+}
+</style>
 
 	<div class="wrapper">
 
@@ -93,12 +105,12 @@
 				<!-- Loads only when user clicks All products or categories -->
 				<%@include file="ListProducts.jsp"%>
 			</c:if>
-			
+
 			<c:if test="${onViewProduct==true}">
 				<!-- Loads only when user clicks View Products -->
 				<%@include file="ViewProduct.jsp"%>
 			</c:if>
-			
+
 			<c:if test="${onManageProducts==true}">
 				<!-- Loads only when user clicks View Products -->
 				<%@include file="ProdManagement.jsp"%>
@@ -121,6 +133,9 @@
 
 		<!-- data table script-->
 		<script src="${js}/dataTables.bootstrap4.js"></script>
+
+		<!-- bootbox-->
+		<script src="${js}/bootbox.min.js"></script>
 
 
 
