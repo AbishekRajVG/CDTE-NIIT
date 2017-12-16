@@ -1,5 +1,22 @@
 $(function() {
 
+	// tackling CSRF token
+	var token = $('meta[name="_csrf"]').attr('content');
+	var header = $('meta[name="_csrf_header"]').attr('content'); 
+	
+	if(token.length > 0 && header.length > 0){
+		
+		$(document).ajaxSend(function(e,xhr,options){
+			
+			xhr.setRequestHeader(header,token);
+			
+		}); 
+		
+	}
+	
+	
+	
+	
 	// code for jquery dataTable
 
 	var $table = $('#productListTable');
@@ -300,4 +317,134 @@ $(function() {
 					
 				});
 	}
+	
+	// validation for category
+	
+		var $categoryForm = $('#catsForm');
+		
+		if($categoryForm.length){
+			
+			$categoryForm.validate({
+				
+				rules: {
+					
+					name : {
+						
+						required : true,
+						minlength : 2
+						
+						
+					},
+					
+					desc : {
+						
+						required : true
+						
+					}
+					
+					
+				},
+				
+				messages : {
+					
+						name : {
+						
+						required : '<div class="text-danger">Please enter a Category Name</div>',
+						minlength : '<div class="text-danger">The name cant be shorter than 2 charecters</div>'
+						
+						
+					},
+					
+					desc : {
+						
+						required : '<div class="text-danger">Please describe the category</div>'
+						
+					}
+					
+					
+				},
+				errorElement : 'em',
+				errorPlacement : function(error, element){
+					// help block
+					error.addClass('help-block');
+					// error after i/p
+					error.insertAfter(element);
+					
+				}	
+				
+			});
+		
+		
+		
+		
+		
+		}
+	
+		// validation for signin page
+		
+		var $signinForm = $('#signinForm');
+		
+		if($signinForm.length){
+			
+			$signinForm.validate({
+				
+				rules: {
+					
+					email : {
+						
+						required : true,
+						email : true
+						
+						
+					},
+					
+				password : {
+						
+						required : true
+						
+					}
+					
+					
+				},
+				
+				messages : {
+					
+						email : {
+						
+						required : '<div class="text-danger">Please enter the registered email</div>',
+						minlength : '<div class="text-danger">Please enter a valid email</div>'
+						
+						
+					},
+					
+					password  : {
+						
+						required : '<div class="text-danger">Password field is required</div>'
+						
+					} 
+					
+					
+				},
+				errorElement : 'em',
+				errorPlacement : function(error, element){
+					// help block
+					error.addClass('help-block');
+					// error after i/p
+					error.insertAfter(element);
+					
+				}	
+				
+			});
+		
+		
+		
+		
+		
+		}
+	
+		
+		
+		
+		
+		
 });

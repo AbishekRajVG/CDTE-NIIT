@@ -295,7 +295,7 @@
 						aria-label="Close"></button>
 				</div>
 				<div class="modal-body bg-lightyellow">
-					<sf:form modelAttribute="category"
+					<sf:form id="catsForm" modelAttribute="category"
 						action="${contextRoot}/manage/category" method="POST"
 						class="form-horizontal">
 

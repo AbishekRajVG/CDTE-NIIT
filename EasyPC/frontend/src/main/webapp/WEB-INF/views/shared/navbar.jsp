@@ -36,6 +36,12 @@
 
 			<ul class="nav nav-pills nav-justified ml-auto">
 
+				<li><a class="nav-link ${status5}"
+					href="${contextRoot}/register">Sign Up</a></li>
+
+				<li><a class="nav-link ${status6}"
+					href="${contextRoot}/signin">Sign in</a></li>
+
 				<li><a class="nav-link ${status1}" href="${contextRoot}/about">About</a>
 				</li>
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import easypc.backend.dao.CategoriesDAO;
@@ -18,19 +19,19 @@ import easypc.frontend.exception.ProductNotFoundException;
 public class PageController {
 
 	private static final Logger lgr = LoggerFactory.getLogger(PageController.class);
-	
+
 	@Autowired
 	private CategoriesDAO catsDAO;
-	
+
 	@Autowired
 	private ProductsDAO prodDAO;
 
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView test() {
-		
+
 		lgr.info("inside Pagecontroller index method - INFO");
 		lgr.debug("inside Pagecontroller index method - DEBUG");
-		
+
 		ModelAndView mav = new ModelAndView("homepage");
 		mav.addObject("title", "home");
 		// passing categories
@@ -86,43 +87,69 @@ public class PageController {
 
 		Categories ctg = null;
 		ctg = catsDAO.get(id);
-	
-		
+
 		mav.addObject("title", ctg.getName());
 		// passing categories
 		mav.addObject("categories", catsDAO.list());
-		mav.addObject("Status" + ctg.getId() , "active");
+		mav.addObject("Status" + ctg.getId(), "active");
 		// passing single category
 		mav.addObject("category", ctg);
 		mav.addObject("onCat", true);
 		return mav;
 
 	}
-	
-	//mapping for View Product
-	@RequestMapping(value={"/show/{id}/product"})
-	public ModelAndView viewProduct(@PathVariable int id) throws ProductNotFoundException{
+
+	// mapping for View Product
+	@RequestMapping(value = { "/show/{id}/product" })
+	public ModelAndView viewProduct(@PathVariable int id) throws ProductNotFoundException {
 		ModelAndView mav = new ModelAndView("homepage");
-		
-		//getting prod id
+
+		// getting prod id
 		Products prod = prodDAO.get(id);
-		
+
 		Categories ctg = null;
 		ctg = catsDAO.get(id);
-	
-		
-		if(prod==null){throw new ProductNotFoundException();}
-		
-		//updating view count
-		prod.setViews(prod.getViews()+1);
+
+		if (prod == null) {
+			throw new ProductNotFoundException();
+		}
+
+		// updating view count
+		prod.setViews(prod.getViews() + 1);
 		prodDAO.update(prod);
-		
-		mav.addObject("title",prod.getName());
+
+		mav.addObject("title", prod.getName());
 		mav.addObject("product", prod);
 		mav.addObject("onViewProduct", true);
-		
-		
+
 		return mav;
+	}
+
+	@RequestMapping(value = { "/signin" })
+	public ModelAndView signin(@RequestParam(name = "error", required = false) String error) {
+		ModelAndView mav = new ModelAndView("signin");
+
+		if (error != null) {
+			mav.addObject("msg", "Your cumpsy fingers are at fault! try again, please.");
+		}
+		mav.addObject("title", "Sign in ");
+		mav.addObject("status6", "active");
+
+		return mav;
+
+	}
+	
+	@RequestMapping(value = { "/access-denied" })
+	public ModelAndView accessDenied() {
+		ModelAndView mav = new ModelAndView("error");
+
+		
+		mav.addObject("title", "403 Access Denied");
+		mav.addObject("errorTitle", "403 - Access Denied");
+		mav.addObject("errorDesc", "You're not authorised to view this page....");
+
+		return mav;
+
 	}
 
 	// @RequestMapping("/test")

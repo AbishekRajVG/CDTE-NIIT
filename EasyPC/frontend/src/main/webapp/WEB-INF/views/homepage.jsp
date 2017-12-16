@@ -32,8 +32,21 @@
 .bg-lightGreen {
 	background-color: #7EF7A8;
 }
+
 .bg-lightRed {
 	background-color: #FF7575;
+	
+
+.bg-yellow {
+	background-color: #E9E935;
+}
+
+.bg-lightyellow {
+	background-color: #FFFFAA;
+}
+
+	
+	
 }
 </style>
 <meta charset="utf-8">
@@ -41,6 +54,9 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
+
+<meta name="_csrf" content="${_csrf.token}">
+<meta name="_csrf_header" content="${_csrf.headerName}">
 
 <!-- Font Awesome CDN -->
 <link rel="stylesheet"
@@ -124,8 +140,13 @@ a:hover {
 
 
 
-		<!-- Bootstrap core JavaScript -->
+		<!-- jquery -->
 		<script src="${js}/jquery.js"></script>
+
+		<!-- jQuery validator -->
+		<script src="${js}/jquery.validate.js"></script>
+
+		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/bootstrap.bundle.min.js"></script>
 
 		<!-- data table plugin -->

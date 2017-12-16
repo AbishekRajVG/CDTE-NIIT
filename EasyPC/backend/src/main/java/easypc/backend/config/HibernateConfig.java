@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class HibernateConfig {
 
 	// h2 configs
-	private static final String DB_url = "jdbc:h2:tcp://localhost/~/easy_pc";
+	private static final String DB_url = "jdbc:h2:tcp://localhost/~/git_easy_pc";
 	private static final String DB_driver = "org.h2.Driver";
 	private static final String DB_dialect = "org.hibernate.dialect.H2Dialect";
 	private static final String DB_uname = "sa";
@@ -58,6 +58,8 @@ public class HibernateConfig {
 		props.put("hibernate.dialect", DB_dialect);
 		props.put("hibernate.show_sql", "true");
 		props.put("hibernate.format_sql", "true");
+		
+		props.put("hibernate.hbm2ddl.auto","update");
 
 		return props;
 	}
