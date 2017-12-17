@@ -1,8 +1,14 @@
 package easypc.frontend.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -126,12 +132,17 @@ public class PageController {
 	}
 
 	@RequestMapping(value = { "/signin" })
-	public ModelAndView signin(@RequestParam(name = "error", required = false) String error) {
+	public ModelAndView signin(@RequestParam(name = "error", required = false) String error, @RequestParam(name = "signout", required = false) String signout) {
 		ModelAndView mav = new ModelAndView("signin");
 
 		if (error != null) {
 			mav.addObject("msg", "Your cumpsy fingers are at fault! try again, please.");
 		}
+		
+		if (signout != null) {
+			mav.addObject("Outmsg", "User has Signed out!");
+		}
+		
 		mav.addObject("title", "Sign in ");
 		mav.addObject("status6", "active");
 
@@ -150,6 +161,20 @@ public class PageController {
 
 		return mav;
 
+	}
+	
+	@RequestMapping(value = { "/perform-signout" })
+	public String Signout(HttpServletRequest req,HttpServletResponse res) {
+		//fetching authentication object
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		
+		if(auth!=null){
+			
+			new SecurityContextLogoutHandler().logout(req, res, auth);;
+			
+		}
+		
+		return "redirect:/signin?signout";
 	}
 
 	// @RequestMapping("/test")

@@ -190,8 +190,8 @@ to {
 
 
 			</c:choose>
-
-
+			
+			<security:authorize access="hasAuthority('USER')">
 			<c:choose>
 
 				<c:when test="${product.quantity < 1}">
@@ -211,7 +211,13 @@ to {
 
 
 			</c:choose>
-
+			</security:authorize>
+			<security:authorize access="hasAuthority('ADMIN')">
+			
+					<a href="${contextRoot}/manage/${product.id}/product" class="btn btn-warning"><i
+						class="fa fa-edit"></i> Edit Product </a>
+			
+			</security:authorize>
 
 
 

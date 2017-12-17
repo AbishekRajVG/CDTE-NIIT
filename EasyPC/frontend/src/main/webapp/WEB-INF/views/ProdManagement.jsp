@@ -242,6 +242,7 @@
 
 	</div>
 	<br> <br>
+		
 	<div class="row justify-content-center">
 
 		<div class="col-xs-12">

@@ -107,18 +107,30 @@ $(function() {
 
 									var str = '';
 
-									if (row.quantity > 0)
+									
 
+										if(userRole=='ADMIN'){
+											str = '<a href=" '
+												+ window.contextRoot
+												+ '/manage/'
+												+ data
+												+ '/product" class="btn btn-outline-warning"><i class="fa fa-edit"></i>&#160; Edit Product</a>';
+										}
+									else{
+										if (row.quantity > 0){
+										
 										str = '<a href=" '
 												+ window.contextRoot
 												+ '/buy/'
 												+ data
 												+ '/product" class="btn btn-outline-success"><i class="fa fa-cart-plus"></i>&#160; Add to Cart</a>';
-
-									else
-
-										str += '<a href="javascript:void(0)" class="btn btn-dark disabled"><i class="fa fa-cart-plus"></i>&#160; Add to Cart</a>';
-
+									}
+										
+									
+									else str += '<a href="javascript:void(0)" class="btn btn-dark disabled"><i class="fa fa-cart-plus"></i>&#160; Add to Cart</a>';
+									
+									
+									}
 									return str;
 								}
 							}

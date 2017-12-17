@@ -4,10 +4,6 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 
-
-
-
-
 <!-- css -->
 <spring:url var="css" value="/resources/css" />
 
@@ -105,8 +101,7 @@ a:hover {
 				<div class="collapse navbar-collapse" id="navbarResponsive"></div>
 			</div>
 		</nav>
-		<br>
-		<br>
+		<br> <br>
 
 
 
@@ -118,7 +113,7 @@ a:hover {
 				<div class="row justify-content-center">
 
 					<div class="col-md-6">
-	
+
 						<c:if test="${not empty msg}">
 							<div class="col-xs-12">
 
@@ -132,7 +127,21 @@ a:hover {
 
 							</div>
 						</c:if>
+						
+						<!-- Sign out message -->
+						<c:if test="${not empty Outmsg}">
+							<div class="col-xs-12">
 
+								<div class="alert alert-success" role="alert">
+
+									<button type="button" class="close" data-dismiss="alert"></button>
+
+									${Outmsg}
+
+								</div>
+
+							</div>
+						</c:if>
 
 						<div class="card ">
 
@@ -206,7 +215,8 @@ a:hover {
 							</div>
 
 							<div class="card-footer bg-lightTeal text-right">
-								New to EasyPC ?? <a href="">Sign up here</a>
+								New to EasyPC ?? <a href="${contextRoot}/register">Sign up
+									here</a>
 							</div>
 
 

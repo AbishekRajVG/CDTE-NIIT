@@ -22,7 +22,6 @@
 		<form-login login-page="/signin" login-processing-url="/signin"
 			username-parameter="email" />
 		<access-denied-handler error-page="/access-denied" />
-		<logout />
 	</http>
 
 	<authentication-manager>

@@ -42,16 +42,16 @@ CREATE TABLE products (
 
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Batman', '' ,'ADMIN', true, 'iamrich', 'bats@gmail.com', '1111111111');
+VALUES ('Batman', '' ,'ADMIN', true, '$2b$10$9q/kWBLHFnzbh7rVgxaKq.kz.ntH6tL81Mt2tT3CINDxH.eG97wAO', 'bats@gmail.com', '1111111111');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Superman', '' , 'SUPPLIER', true, 'loislane', 'hope@gmail.com', '8888888888');
+VALUES ('Superman', '' , 'SUPPLIER', true, '$2b$10$DvO1Avacer9nUf3F4Dav8udXI6rBfHr.b5wWzAtHhfwx3Ug7urbeu', 'hope@gmail.com', '8888888888');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Wonder Woman', '', 'SUPPLIER', true, 'diana', 'diana@gmail.com', '7777777777');
+VALUES ('Wonder Woman', '', 'SUPPLIER', true, '$2b$10$DAgUmTGgK1NQooKp6O/wWODdkkchB0niK3sL6dqlXhIjC1ZLKjkHa', 'diana@gmail.com', '7777777777');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Aqua Man', '', 'USER', true, 'fishtalker', 'aquaman@gmail.com', '1234567890');
+VALUES ('Aqua Man', '', 'USER', true, '$2b$10$RZTd5bgqTbaFtZH.zXjBYuBv/g6LVBnO9kVYHsHrOSM9jL85qn42O', 'aquaman@gmail.com', '1234567890');
 
 INSERT INTO products (code, name, brand, description, unit_price, quantity, active, category_id, supplier_id, purchases, views)
 VALUES ('gpu1', 'Asus Strix GTX 1080 ti ', 'Asus', 'Base clock 1632 MHz Boost Clock (OC Mode) featuring 11GB GDDR5X 352-bit memory, 3584 CUDA cores, and 11GB Frame Buffer', 65000, 20, true, 1, 2, 0, 0 );
@@ -65,4 +65,16 @@ INSERT INTO products (code, name, brand, description, unit_price, quantity, acti
 VALUES ('ssd1', 'Samsung 850 EVO 500GB','Samsung', 'Samsung 850 EVO 500GB with R/W 540MB/s and 520MB/s respectively ', 25000, 10, true, 2, 3, 0, 0 );
 INSERT INTO products (code, name, brand, description, unit_price, quantity, active, category_id, supplier_id, purchases, views)
 VALUES ('logig810', 'Logitech G810 RGB Gaming Keyboard','Logitech','Logitech G810 Orion Spectrum RGB Mechanical Gaming Keyboard w/ Ultra-Responsive Romer-G Mechanical Key Switches', 10000, 15, true, 9, 3, 0, 0 );
+
+CREATE TABLE cart_line (
+	id IDENTITY,
+	cart_id int,
+	total DECIMAL(10,2),
+	product_id int,
+	product_count int,
+	buying_price DECIMAL(10,2),
+	is_available boolean,
+	CONSTRAINT fk_cartline_product_id FOREIGN KEY (product_id ) REFERENCES product (id),
+	CONSTRAINT pk_cartline_id PRIMARY KEY (id)
+);
 

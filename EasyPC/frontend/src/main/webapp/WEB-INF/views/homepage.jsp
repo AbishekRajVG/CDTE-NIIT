@@ -131,6 +131,11 @@ a:hover {
 				<!-- Loads only when user clicks View Products -->
 				<%@include file="ProdManagement.jsp"%>
 			</c:if>
+			
+			<c:if test="${onCart==true}">
+				<!-- Loads only when user clicks cart -->
+				<%@include file="cart.jsp"%>
+			</c:if>
 
 
 		</div>
