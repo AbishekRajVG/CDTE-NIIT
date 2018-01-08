@@ -121,7 +121,7 @@ $(function() {
 										
 										str = '<a href=" '
 												+ window.contextRoot
-												+ '/buy/'
+												+ '/cart/add/'
 												+ data
 												+ '/product" class="btn btn-outline-success"><i class="fa fa-cart-plus"></i>&#160; Add to Cart</a>';
 									}
@@ -455,8 +455,45 @@ $(function() {
 		}
 	
 		
+	//refresh button in cart 
+		$('button[name="refreshProd"]').click(function(){
+			
+			//fetching cartline id
+			var cartLineId = $(this).attr('value');
+			var prodCount = $('#count_'+ cartLineId);
+			
+			var orgCount = prodCount.attr('value');
+			var newCount = prodCount.val();
+			
+			//fool proofing
+			if(newCount !== orgCount){
+				if(newCount < 1 || newCount>3){
+					
+					prodCount.val(orgCount);
+					bootbox.alert({
+						
+						size:'small',
+						message: 'The seller has limited to a max. of 3 units per customer'
+						
+							
+							
+					});
+					
+				}
+				else{
+					
+					var updateUrl = window.contextRoot + '/cart/' + cartLineId + '/update?count=' + newCount;
+					
+					window.location.href = updateUrl;
+					
+				}
+				
+				
+			}
+			
+			
+		});
 		
 		
 		
-		
-});
+});  

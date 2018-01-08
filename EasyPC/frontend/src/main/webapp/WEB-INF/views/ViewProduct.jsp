@@ -203,7 +203,7 @@ to {
 
 				<c:otherwise>
 
-					<a href="${contextRoot}/buy/${product.id}/product"
+					<a href="${contextRoot}/cart/add/${product.id}/product"
 						class="btn btn-outline-success"><i class="fa fa-cart-plus"></i>
 						Add to Cart &#160; </a>
 

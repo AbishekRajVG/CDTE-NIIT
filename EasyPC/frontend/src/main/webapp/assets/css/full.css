@@ -131,3 +131,21 @@ input:checked+.slider:before {
 	table#cart tfoot td .btn{display:block;}
 	
 }
+
+.btn{
+      transition-duration: 0.2s;
+      cursor: pointer;
+}
+
+.btn-yellow1 {
+    background-color: #E9E935; /* yellow */
+    }
+    
+.btn-yellow1:hover{
+	background-color: #e9de16;
+	color: white;
+}
+
+.table-lightyellow {
+	background-color: #FFFFAA;
+}

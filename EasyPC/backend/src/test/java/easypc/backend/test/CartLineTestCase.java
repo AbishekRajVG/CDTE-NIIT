@@ -46,21 +46,23 @@ public class CartLineTestCase {
 	public void testAddCartLine() {
 		
 		// fetch the user and then cart of that user
-		Users user = userDAO.getByEmail("superman@dc.com");		
+		Users user = userDAO.getByEmail("flash@dc.com");		
 		Cart cart = user.getCart();
 		
 		// fetch the product 
-		Products product = productDAO.get(5);
+		Products product = productDAO.get(53);
 		
 		// Create a new CartLine
 		cartLine = new CartLine();
+		cartLine.setBuyingPrice(product.getUnit_price());
 		cartLine.setCartId(cart.getId());
 		cartLine.setProduct(product);
 		cartLine.setProductCount(1);
 		
+		
 		double oldTotal = cartLine.getTotal();		
 		
-		cartLine.setTotal(product.getUnit_price() * cartLine.getProductCount());
+		cartLine.setTotal(product.getUnit_price()*cartLine.getProductCount());
 		
 		cart.setCart_lines(cart.getCart_lines() + 1);
 		cart.setGrand_total(cart.getGrand_total() + (cartLine.getTotal() - oldTotal));
